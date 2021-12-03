@@ -1,0 +1,44 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} UI Icons {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="card">
+
+    <div class="card-body" style="text-align : center; font-family: 'Noto Sans KR', sans-serif;">
+            <h1 class="card-title">[당플리 얼굴인식 테스트]</h1>
+            <h3 class="card-text">얼굴이 화면에 나타나면 아래 '당플리 시작하기' 버튼을 눌러주세요!</h3>
+            <div class="card-footer p-4 pt-0 border-top-0">
+            <div class="text-center"><a class="btn btn-primary" href="{% url 'start_rc' %}">당플리 시작하기</a></div>
+            {% comment %} <div class="text-center"><a class="btn btn-outline-light mt-auto" href="{% url 'stream' %}">얼굴 인식 시작하기</a></div> {% endcomment %}
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="card card-chart">
+                <div class="card-header" >
+                        <div style="text-align : center; font-family: 'Noto Sans KR', sans-serif;">
+                </div>
+            {% block body %}
+                <table>
+                    <tr>
+                        <div style="text-align : center;">
+                        <img src="http://127.0.0.1:8000/detectme" style="width: 900px; height: 500px; left: 0px; top: 0px;" />
+                        </div>
+                    </tr>
+                </table>
+            {% endblock %}
+            <section class="py-5">
+            </div>
+        </div>
+    </div>
+
+      
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

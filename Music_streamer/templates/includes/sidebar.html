@@ -1,0 +1,55 @@
+    <div class="sidebar">
+      <div class="sidebar-wrapper">
+        <div class="logo">
+          <a target="_blank" rel="sponsored noopener noreferrer" 
+             href="/" class="simple-text logo-normal">
+              <p>Menu</p>
+          </a>
+        </div>
+
+        <ul class="nav" style="font-family: 'Noto Sans KR', sans-serif;">
+        {% if request.user.is_authenticated %}
+
+          <li class="{% if 'tables' in segment %} active {% endif %}">
+            <a href="/ui-tables.html">
+              <i class="tim-icons icon-puzzle-10"></i>
+               <h4>팀 팔색조</h4>
+            </a>
+          </li>
+          {% comment %} <li class="{% if 'page-user' in segment %} active {% endif %}">
+            <a href="/page-user.html">
+              <i class="tim-icons icon-single-02"></i>
+              <h4>프로젝트 소개</h4>
+            </a>
+          </li> {% endcomment %}
+          <li class="{% if 'icons' in segment %} active {% endif %}">
+            <a href="/ui-icons.html">
+              <i class="tim-icons icon-atom"></i>
+              <h4>얼굴인식 테스트</h4>
+            </a>
+          </li>
+                    <li class="{% if 'rtl-support' in segment %} active {% endif %}">
+            <a href="{% url 'start_rc' %}">
+              <i class="tim-icons icon-world"></i>
+              <h4>당플리 시작하기</h4>
+            </form>
+            </a>
+          <li>
+            <a href="{% url 'logout' %}" >
+              <i class="tim-icons icon-button-power"></i>
+              <h4>Logout</h4>
+            </a>
+          </li>
+          {% else %}
+          <li class="active">
+            <a target="_blank" 
+               href="https://appseed.us/admin-dashboards/django-dashboard-black-pro">
+              <i class="tim-icons icon-spaceship"></i>
+              <p>PRO Version</p>
+            </a>
+          </li>   
+          {% endif %}
+                    
+        </ul>  
+      </div>
+    </div>

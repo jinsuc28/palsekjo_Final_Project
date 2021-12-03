@@ -1,0 +1,72 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} UI Tables {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="card ">
+      <div class="card-header" style="font-family: 'Noto Sans KR', sans-serif;">
+        <h4 class="card-title"><strong></strong></h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table tablesorter " id="">
+              <img class="card-img-top" src="static/assets/img/team_members.png" alt="..." />
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card card-user">
+      <div class="card-body">
+        <p class="card-text">
+          <div class="author">
+            <div class="block block-one"></div>
+            <div class="block block-two"></div>
+            <div class="block block-three"></div>
+            <div class="block block-four"></div>
+            <a href="javascript:void(0)">
+              <img class="avatar" src="/static/assets/img/page_logo.png" alt="...">
+              <h3 class="title" style="font-family: 'Noto Sans KR', sans-serif;">
+                팀 팔색조
+              </h3>
+            </a>
+            <p class="description">
+              {{ request.user.email }}
+            </p>
+          </div>
+        </p>
+        <div class="card-description">
+          <div style="text-align:left; font-family: 'Noto Sans KR', sans-serif;">
+          <br>
+          실시간 얼굴 감정 인식 기반 음악 추천 서비스 당플리입니다.<br><br>
+          
+          혁신성장인재사업 인공지능 교육의 일환으로 송경준, 최진수, 변하영 학우가 참여한 팀 프로젝트입니다.<br><br>
+          더 자세한 프로젝트 소개와 코드는 깃허브를 참고해주세요.
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="button-container">
+          <button href="javascript:void(0)" class="btn btn-icon btn-round btn-github">
+            <i class="fa fa-github" style="font-size:24px"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

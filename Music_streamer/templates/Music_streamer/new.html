@@ -1,0 +1,66 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <form action="" method="post">
+    <div style="text-align : center; font-family: 'Noto Sans KR', sans-serif;">
+
+
+    <title>Music Streamer</title>
+    {% csrf_token %}
+    <script>
+        // <input type={"submit"} value={"Add"} class={"btn btn-info btn-sm"}>
+
+        var usersong = prompt("지금 당신이 듣고 싶은 음악을 알려주세요", "");
+        var emotion = prompt("어떤 감정일 때 이 음악을 들으시나요?", "");
+
+        location.href='https://www.youtube.com/results?search_query='+usersong
+
+    </script>
+            <div class = "container">
+        <form action = "{% url 'create' %}">
+            song:<input type="text" name="song">
+            <br>
+            emotion:<input type="text" name="emotion">
+            <br>
+            <input type="submit" value="제출">
+        </form>
+    </div>
+  </div>
+        <!-- <form method="POST">
+            <input type="text" name="text">
+            <button type="submit" class="btn btn-primary">music_save</button>
+        </form>
+
+        <h2>{{ music_save }}</h2> -->
+
+    </form>
+</head>
+<body>
+</body>
+</html>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
+      demo.initDashboardPageCharts();
+
+    });
+  </script>
+
+{% endblock javascripts %}

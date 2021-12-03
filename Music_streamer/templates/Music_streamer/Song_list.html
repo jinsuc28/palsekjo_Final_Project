@@ -1,0 +1,46 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<div class="container" style="font-family: 'Noto Sans KR', sans-serif;">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td><B>감정</B></td>
+            <td><B>노래 제목</B></td>
+            <td><B>url</B></td>
+        </tr>
+        </thead>
+        <tbody>
+            {% for Song_list in Song_lists %}
+        <tr>
+            <td>{{Song_list.emotion}}</td>
+            <td>{{Song_list.song}}</td>
+            <td><a href = {{Song_list.url}}>{{Song_list.url}}</a></td>
+        </tr>
+        {%endfor%}
+        <tbody>
+    </table>
+</body>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
+      demo.initDashboardPageCharts();
+
+    });
+  </script>
+
+{% endblock javascripts %}
